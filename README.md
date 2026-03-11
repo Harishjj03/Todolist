@@ -1,5 +1,5 @@
 # Ex03 To-Do List using JavaScript
-## Date:
+## Date:11-03-2026
 
 ## AIM
 To create a To-do Application with all features using JavaScript.
@@ -36,10 +36,79 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+```
+index.html:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Todo App</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<h2>Todo List</h2>
+
+<input type="text" id="task">
+<button onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+
+<footer>
+HARISHBALA J - 212224223002
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>C
+
+```
+```
+script.js:
+function addTask(){
+
+let task=document.getElementById("task").value;
+
+let li=document.createElement("li");
+
+li.innerHTML = task + " <button onclick='removeTask(this)'>Delete</button>";
+
+li.onclick=function(){
+li.classList.toggle("completed");
+}
+
+document.getElementById("list").appendChild(li);
+
+document.getElementById("task").value="";
+
+}
+
+function removeTask(btn){
+btn.parentElement.remove();
+}
+
+```
+```
+style.css:
+body{
+font-family: Arial;
+text-align:center;
+}
+
+li{
+margin:10px;
+}
+
+.completed{
+text-decoration: line-through;
+color:gray;
+}
+
+```
 
 ## OUTPUT
-
+![alt text](<Screenshot 2026-03-11 160941.png>)
 
 ## RESULT
 The program for creating To-do list using JavaScript is executed successfully.
